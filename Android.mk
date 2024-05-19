@@ -101,7 +101,7 @@ LOCAL_CFLAGS += -DDEFAULT_ES=3
 //TODO: maybe temporary?
 LOCAL_CFLAGS += -Wno-typedef-redefinition -Wno-dangling-else
 
-LOCAL_LDLIBS := -ldl -llog -landroid -lEGL -lGLESv2 -lGLESv3
+LOCAL_LDLIBS := -ldl -llog -landroid -lEGL -lGLESv3
 #building as a static lib
 
 include $(BUILD_SHARED_LIBRARY)
