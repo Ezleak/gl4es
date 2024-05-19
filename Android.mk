@@ -8,7 +8,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := GL
+LOCAL_MODULE := gl4es
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
 
@@ -94,11 +94,11 @@ LOCAL_CFLAGS += -g -std=gnu99 -funwind-tables -O3 -fvisibility=hidden -include i
 LOCAL_CFLAGS += -DNOX11
 LOCAL_CFLAGS += -DNO_GBM
 #LOCAL_CFLAGS += -DNO_INIT_CONSTRUCTOR
-LOCAL_CFLAGS += -DDEFAULT_ES=2
+LOCAL_CFLAGS += -DDEFAULT_ES=3
 //TODO: maybe temporary?
 LOCAL_CFLAGS += -Wno-typedef-redefinition -Wno-dangling-else
 
-LOCAL_LDLIBS := -llog
+LOCAL_LDLIBS := -llog -landroid -lEGL -lGLESv2 -lGLESv3
 #building as a static lib
 
 LOCAL_CFLAGS += -DSTATICLIB
