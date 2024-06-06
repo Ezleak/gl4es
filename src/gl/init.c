@@ -51,6 +51,8 @@ static void fast_math() {
 #define DEFAULT_ES 1
 #else
 #define DEFAULT_ES 2
+#else
+#define DEFAULT_ES 3
 #endif
 #endif
 
@@ -171,6 +173,7 @@ void initialize_gl4es() {
     switch(globals4es.es) {
       case 1:
       case 2:
+      case 3:
         break;
       default:
         // automatic ES backend selection
@@ -198,14 +201,15 @@ void initialize_gl4es() {
       case 43:
       case 44:
       case 45:
+      case 46:
         break;
       default:
         // automatic GL version selection
-        globals4es.gl = (globals4es.es==1)?15:32;  // forcing GL 1.5 for es1.1 and GL 2.1 for es2.0
+        globals4es.gl = (globals4es.es==3)?30:32;  // forcing GL 1.5 for es1.1 and GL 2.1 for es2.0
         break;
     }
 
-    SHUT_LOGD("Using GLES %s backend\n", (globals4es.es==1)?"1.1":"3.0");
+    SHUT_LOGD("Using GLES %s backend\n", (globals4es.es==3)?"1.1":"3.0");
 
     env(LIBGL_NODEPTHTEX, globals4es.nodepthtex, "Disable usage of Depth Textures");
 
