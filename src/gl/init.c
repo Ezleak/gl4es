@@ -48,11 +48,9 @@ static void fast_math() {
 
 #ifndef DEFAULT_ES
 #if defined(PANDORA) || defined(ANDROID)
-#define DEFAULT_ES 1
+#define DEFAULT_ES 3
 #else
 #define DEFAULT_ES 2
-#else
-#define DEFAULT_ES 3
 #endif
 #endif
 
