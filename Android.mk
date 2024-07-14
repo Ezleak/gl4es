@@ -79,22 +79,22 @@ LOCAL_SRC_FILES := \
 	src/gl/texture_3d.c \
 	src/gl/uniform.c \
 	src/gl/vertexattrib.c \
-  src/gl/host.c \
+        src/gl/host.c \
 	src/gl/wrap/gl4eswraps.c \
 	src/gl/wrap/gles.c \
 	src/gl/wrap/glstub.c \
 	src/gl/math/matheval.c \
-  src/gl/vgpu/shaderconv.c \
-  src/egl/egl.c \
+        src/gl/vgpu/shaderconv.c \
+        src/egl/egl.c \
 	src/glx/glx_stubs.c \
 	src/glx/rpi.c \
 	src/glx/utils.c \
-  src/egl/lookup.c \
+        src/egl/lookup.c \
 	src/glx/hardext.c \
 	src/glx/glx.c \
 	src/glx/lookup.c \
 	src/glx/streaming.c
-LOCAL_CFLAGS += -DANDROID -pipe -integrated-as -fno-plt -O3 -flto=auto -mllvm -polly -mllvm -polly-vectorizer=stripmine -mllvm -polly-invariant-load-hoisting -mllvm -polly-run-inliner -mllvm -polly-run-dce -std=gnu2x -funwind-tables -O3 -fvisibility=hidden -fno-semantic-interposition -include include/android_debug.h
+LOCAL_CFLAGS += -DANDROID -pipe -integrated-as -fno-plt -Ofast -flto=auto -mllvm -polly -mllvm -polly-vectorizer=stripmine -mllvm -polly-invariant-load-hoisting -mllvm -polly-run-inliner -mllvm -polly-run-dce -std=gnu2x -funwind-tables -Ofast -fvisibility=hidden -fno-semantic-interposition -include include/android_debug.h
 LOCAL_CFLAGS += -DNO_INIT_CONSTRUCTOR
 LOCAL_CFLAGS += -DNOX11
 LOCAL_CFLAGS += -DNO_GBM
