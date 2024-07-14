@@ -31,7 +31,7 @@ void agl_reset_internals();
 void fpe_shader_reset_internals();
 #endif
 
-globals4es_t globals4es = {0};
+globals4es_t globals4es = {1};
 
 #if defined(PANDORA) || defined(CHIP) || defined(GOA_CLONE)
 static void fast_math() {
@@ -48,9 +48,12 @@ static void fast_math() {
 
 #ifndef DEFAULT_ES
 #if defined(PANDORA) || defined(ANDROID)
-#define DEFAULT_ES 3
+#define DEFAULT_ES 1
 #else
 #define DEFAULT_ES 2
+#else
+#define DEFAULT_ES 3
+#endif
 #endif
 #endif
 
@@ -207,7 +210,7 @@ void initialize_gl4es() {
         break;
     }
 
-    SHUT_LOGD("Using GLES %s backend\n", (globals4es.es==1)?"1.1":"3.1");
+    SHUT_LOGD("Using GLES %s backend\n", (globals4es.es==1)?"1.1":"3.2");
 
     env(LIBGL_NODEPTHTEX, globals4es.nodepthtex, "Disable usage of Depth Textures");
 
