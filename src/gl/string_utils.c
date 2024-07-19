@@ -43,7 +43,7 @@ char * InplaceReplaceByIndex(char* pBuffer, int* size, const int startIndex, con
     else
         length_difference = strlen(replacement) - (endIndex - startIndex); // Can be negative if repl is smaller
 
-    pBuffer = ResizeIfNeeded(pBuffer, size, length_difference);
+    pBuffer = gl4es_resize_if_needed(pBuffer, size, length_difference);
     //SHUT_LOGD("BEFORE MOVING: \n%s", pBuffer);
     // Move the end of the string
     memmove(pBuffer + startIndex + strlen(replacement) , pBuffer + endIndex + 1, strlen(pBuffer) - endIndex + 1);
@@ -67,7 +67,7 @@ char * InplaceReplaceByIndex(char* pBuffer, int* size, const int startIndex, con
  */
 char * InplaceInsertByIndex(char * source, int *sourceLength, const int insertPoint, const char *insertedString){
     int insertLength = strlen(insertedString);
-    source = ResizeIfNeeded(source, sourceLength, insertLength);
+    source = gl4es_resize_if_needed(source, sourceLength, insertLength);
     memmove(source + insertPoint + insertLength,  source + insertPoint, strlen(source) - insertPoint + 1);
     memcpy(source + insertPoint, insertedString, insertLength);
 
