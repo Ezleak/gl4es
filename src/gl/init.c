@@ -51,7 +51,6 @@ static void fast_math() {
 #define DEFAULT_ES 1
 #else
 #define DEFAULT_ES 2
-#define DEFAULT_ES 3
 #endif
 #endif
 
@@ -172,11 +171,10 @@ void initialize_gl4es() {
     switch(globals4es.es) {
       case 1:
       case 2:
-      case 3:
         break;
       default:
         // automatic ES backend selection
-        globals4es.es = DEFAULT_ES;
+        globals4es.es = 3 ;
         break;
     }
 
