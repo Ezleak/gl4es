@@ -75,10 +75,10 @@ static const char *lib_ext[] = {
 
 static const char *gles2_lib[] = {
     #if defined(BCMHOST)
-    "libbrcmGLESv2",
+    "libbrcmGLESv3",
     #endif
-    "libGLESv2_CM",
-    "libGLESv2",
+    "libGLESv3_CM",
+    "libGLESv3",
     NULL
 };
 
